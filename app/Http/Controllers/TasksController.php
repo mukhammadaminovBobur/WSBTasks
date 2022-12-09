@@ -45,6 +45,19 @@ class TasksController extends Controller
             }
             return "First largest is {$large1}, second largest is {$large2}";
         }
+        elseif ($key == "ex1-15"){
+            $large = 0;
+            $small = $this->arr[0];
+            for ($j = 0; $j < count($this->arr); $j++) {
+                if ($this->arr[$j] > $large) {
+                    $large = $this->arr[$j];
+                }
+                if ($this->arr[$j] < $small) {
+                    $small = $this->arr[$j];
+                }
+            }
+            return "Largest is {$large}, smallest is {$small}";
+        }
 
         else{
             return "Not found";
