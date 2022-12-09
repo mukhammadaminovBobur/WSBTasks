@@ -19,7 +19,15 @@ class TasksController extends Controller
                 }
                 $j++;
             }
-            return "Smallest number is {$small}";
+            return "Smallest number is {$small}(While)";
+        }elseif ($key == "ex1-13"){
+            $small = $this->arr[0];
+            for ($j = 0; $j < count($this->arr); $j++) {
+                if ($this->arr[$j] < $small) {
+                    $small = $this->arr[$j];
+                }
+            }
+            return "Smallest number is {$small}(For)";
         }
 
         else{
