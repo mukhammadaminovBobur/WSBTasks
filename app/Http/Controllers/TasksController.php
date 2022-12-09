@@ -58,6 +58,63 @@ class TasksController extends Controller
             }
             return "Largest is {$large}, smallest is {$small}";
         }
+        elseif ($key == "ex1-16"){
+            $id = 0;
+            $large = $this->arr[0];
+            for ($j = 0; $j < count($this->arr); $j++) {
+                if ($this->arr[$j] > $large) {
+                    $large = $this->arr[$j];
+                    $id = $j;
+                }
+            }
+            return "Smallest number is {$large}(For)";
+        }
+
+
+        elseif ($key == "ex1-18a"){
+            $arr = $this->arr;
+            $sum = 0;
+            array_shift($arr);
+            for ($j = 1; $j < count($arr); $j++) {
+                $sum += $arr[$j];
+            }
+            return "The answer is: {$sum}";
+        }
+        elseif ($key == "ex1-18b"){
+            $arr = $this->arr;
+            $sum = 1;
+            array_shift($arr);
+            for ($j = 0; $j < count($arr); $j++) {
+                $sum *= $arr[$j];
+            }
+            return "The answer is: {$sum}";
+        }
+        elseif ($key == "ex1-18c"){
+            $arr = $this->arr;
+            $sum = 1;
+            $count_of_array = count($arr);
+            for ($j = 0; $j < $count_of_array; $j++) {
+                if ($arr[$j] > 0){
+                    $sum += $arr[$j];
+                }
+            }
+            $sum /= $count_of_array;
+            return "The answer is: {$sum}";
+        }
+        elseif ($key == "ex1-18d"){
+            $arr = $this->arr;
+            $sum = 1;
+            $count_of_array = count($arr);
+            $d = 0;
+            for ($j = 0; $j < $count_of_array; $j++) {
+                if ($arr[$j] > 0){
+                    $sum += $arr[$j];
+                    $d++;
+                }
+            }
+            $sum /= $d;
+            return "The answer is: {$sum}";
+        }
 
         else{
             return "Not found";
