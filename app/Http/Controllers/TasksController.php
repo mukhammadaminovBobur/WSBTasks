@@ -20,7 +20,8 @@ class TasksController extends Controller
                 $j++;
             }
             return "Smallest number is {$small}(While)";
-        }elseif ($key == "ex1-13"){
+        }
+        elseif ($key == "ex1-13"){
             $small = $this->arr[0];
             for ($j = 0; $j < count($this->arr); $j++) {
                 if ($this->arr[$j] < $small) {
@@ -28,6 +29,21 @@ class TasksController extends Controller
                 }
             }
             return "Smallest number is {$small}(For)";
+        }
+        elseif ($key == "ex1-14"){
+            $large1 = 0;
+            $large2 = 0;
+            for ($j = 0; $j < count($this->arr); $j++) {
+                if ($this->arr[$j] > $large2) {
+                    if ($this->arr[$j] > $large1){
+                        $large2 = $large1;
+                        $large1 = $this->arr[$j];
+                    }else{
+                        $large2 = $this->arr[$j];
+                    }
+                }
+            }
+            return "First largest is {$large1}, second largest is {$large2}";
         }
 
         else{
