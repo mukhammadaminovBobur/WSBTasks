@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('subject')->group(function (){
+    Route::get('/ads/{key}', [\App\Http\Controllers\TasksController::class, 'ADS']);
+});
